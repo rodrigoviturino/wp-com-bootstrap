@@ -1,5 +1,5 @@
 <?php
-// Aqui vai os arquivos que vai ser os primeiros a ser carregado pelo TEMA
+// FUNCTION É O PRIMEIRO A SER CARREGADO NO TEMA
 
 // Adicionando Css e Script
 function rp_theme_style() {
@@ -11,8 +11,10 @@ function rp_theme_style() {
 
 // Vai adicionar os recursos do painel do Wordpress
 function rp_after_setup() {
-    // add_theme_support('menus'); // Faz o suporte de versoes antigas WP
-                // ID da função // o que vai aparecer no painel
+    // Faz o suporte de versoes antigas WP
+    add_theme_support('menus');
+    // REGISTRAR MENU DE NAVEGAÇÃO
+                    // ID da função     // nome do tema
     register_nav_menu('primary', __('Primary Menu','primeirotema'));
     register_nav_menu('footer', 'Menu Footer');
 }

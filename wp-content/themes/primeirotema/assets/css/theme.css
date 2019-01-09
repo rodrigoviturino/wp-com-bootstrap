@@ -5,3 +5,12 @@ body{
 .main_menu {
     background-color: #777;
 }
+
+.main_menu ul{
+    display: flex;
+}
+
+.main_menu li{
+    list-style: none;
+    padding: 0 10px;
+}
