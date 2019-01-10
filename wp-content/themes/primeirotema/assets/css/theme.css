@@ -14,3 +14,17 @@ body{
     list-style: none;
     padding: 0 10px;
 }
+
+.container{
+    width: 70%;
+    float: left;
+}
+
+sidebar{
+    width: 30%;
+    float: left;
+}
+
+.widget_title {
+    color: #0000ff;
+}
