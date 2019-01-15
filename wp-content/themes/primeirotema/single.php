@@ -13,15 +13,14 @@
                 the_post();
             ?>
                 <article>
+                    <h2> <?= the_title(); ?> </h2>
+                    
+                    <!-- Tumbnail -->
                     <?php if(has_post_thumbnail()): ?>
-                        <!-- Puxa o link de tudo -->
-                        <a href="<?= the_permalink(); ?>" class="post_thumbnail">
-                        <!-- Tamanho da foto ex: thumbnail, medium,large // Array é para adicionar 1 unica class para cada imagem --> 
-                            <?php the_post_thumbnail('full', array('class' => 'post_miniatura')); ?>
-                        </a>
-                    <?php endif; ?>
+                        <!-- Tamanho da foto ex: thumbnail, medium,large -->
+                            <?php the_post_thumbnail('full'); ?>
+                    <?php endif; ?> 
 
-                    <h2> <a href="<?= the_permalink(); ?>"> <?= the_title(); ?> </a> </h2>
 
                     <p>
                     <!-- Exibir o conteudo -->  
@@ -38,14 +37,15 @@
 
                         <!-- Exibir o conteudo do post de acordo com a conf. de leitura que pode deixar o texto completo ou resumo -->
                     <p>
-                        <?php the_excerpt(); ?>
+                    <!-- conteudo inteiro -->
+                        <?php the_content(); ?>
                     </p>
 
                     <!-- mostrar a quantidade de comentarios do post --> 
                     <p>
                         <?php comments_number('0 comentários', 'um comentário', '% comentários'); ?> 
                         |
-                        <a href="<?= the_permalink(); ?>"> LEIA MAIS </a>
+                        
                     </p>
                 </article>
 
@@ -54,8 +54,8 @@
 
     <!-- Inicio Paginação -->
         <div class="paginacao">
-            <div class="pagina_anterior"> <?php previous_posts_link('Página Anterior'); ?> </div>
-            <div class="pagina_proxima"> <?php next_posts_link('Próxima Página'); ?> </div>
+            <div class="pagina_anterior"> <?php previous_post_link(); ?> </div>
+            <div class="pagina_proxima"> <?php next_post_link(); ?> </div>
         </div>
 
     </div>
