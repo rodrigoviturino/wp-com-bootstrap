@@ -11,6 +11,9 @@ function rp_theme_style() {
 
 // Vai adicionar os recursos do painel do Wordpress
 function rp_after_setup() {
+    // Adicionar IMAGEM MINIATURAS NO POST     
+    add_theme_support('post-thumbnails', '');
+
     // Faz o suporte de versoes antigas WP
     add_theme_support('menus');
     // REGISTRAR MENU DE NAVEGAÇÃO
