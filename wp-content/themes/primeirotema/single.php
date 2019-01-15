@@ -23,7 +23,7 @@
 
 
                     <p>
-                    <!-- Exibir o conteudo -->  
+                    <!-- Exibir os dados de Criação do conteudo -->  
                     <?php echo get_the_date(); ?> 
                         ||| Autor: 
                         <a href="
