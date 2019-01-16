@@ -16,6 +16,11 @@ function rp_after_setup() {
 
     // Faz o suporte de versoes antigas WP
     add_theme_support('menus');
+
+    add_theme_support('title-tag');
+
+    add_theme_support('custom-logo');
+
     // REGISTRAR MENU DE NAVEGAÇÃO
                     // ID da função     // nome do tema
     register_nav_menu('primary', __('Primary Menu','primeirotema'));

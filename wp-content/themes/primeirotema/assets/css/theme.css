@@ -84,3 +84,10 @@ footer {
     width: 33%;
     float: left;
 }
+
+.custom-logo {
+    height: 100px;
+    width:100px;
+    float:left;
+    margin-right: 20px;
+}

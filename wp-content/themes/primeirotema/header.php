@@ -16,9 +16,17 @@
 <?php body_class(); ?>
 
 <header>
+<!-- Adicionando no painel a logo -->
+    <?php 
+        if(has_custom_logo()) {
+            the_custom_logo();
+        }
+        ?>
 
-<h1>Meu Primeiro Tema</h1>
-    
+
+<h1><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></h1>
+
+<div style="clear:both;"></div>
     <?php
         if( has_nav_menu('primary')){
             wp_nav_menu(array( // Este nome é do id do menu nav_menu
