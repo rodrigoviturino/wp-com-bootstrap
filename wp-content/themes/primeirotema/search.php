@@ -5,6 +5,11 @@
 <section>
     <div class="container">
 
+    <h1>
+        Você pesquisou por: <?php echo get_search_query(); ?>
+    </h1>
+
+
     <!-- Verifica se tem POST -->
     <?php if(have_posts()): ?>
         <!-- Inicio Loop -->

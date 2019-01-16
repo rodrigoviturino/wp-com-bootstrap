@@ -1,9 +1,16 @@
 <?php
+/*
+    Template Name: Post Página Total
+    Template Post Type: post 
+*/
+?>
+
+<?php
     get_header();
 ?>
 
 <section>
-    <div class="container">
+    <div class="container fullwidth">
 
     <!-- Verifica se tem POST -->
     <?php if(have_posts()): ?>
@@ -46,31 +53,6 @@
                         <?php comments_number('0 comentários', 'um comentário', '% comentários'); ?> 
                         |
                     </p>
-                    <hr>
-
-                <h3>Posts Relacionados</h3>
-                    <?php
-                    $categories = get_the_category();
-
-                        $rp_query = new WP_Query(array(
-                            'posts_per_page' => 3, // qtd de exibir
-                            'post__not_in' => array( $post->ID ), // excluindo quem nao queremos exibir
-                            'cat' => $categories[0]->term_id // faz a busca da categoria do post THIS
-                        ));
-
-                        // exibindo a busca de cima na tela
-                        if($rp_query->have_posts()) {
-                            while($rp_query->have_posts()) {
-                                $rp_query->the_post();
-                                // Caminho para buscar
-                                get_template_part('template_parts/related_post');
-                            }
-                            // Reseta a segunda requisição
-                            wp_reset_postdata();
-                        }
-                    ?>
-
-                    <div stytle="clear:both"></div>
 
                     <hr>
 
@@ -92,8 +74,6 @@
         </div>
 
     </div>
-
-<?php get_sidebar(); ?>
 
     <div style="clear:both">   </div>
 </section>
